@@ -1,101 +1,101 @@
-//challenge-1
+// //challenge-1
 
-function clickme() {
-	var birthyear=prompt("What's your birth year ? good friend");
-	var totalDays=(2020-birthyear)*365;
+// function clickme() {
+// 	var birthyear=prompt("What's your birth year ? good friend");
+// 	var totalDays=(2020-birthyear)*365;
 
-	var h1=document.createElement('h3');	// create h4 element tag 'h4' & store in var h1
-	var textAnswer=document.createTextNode('You are  '+totalDays +' days old');
-	h1.appendChild(textAnswer); 	//appending "textAnswer" on var 'h1'
-	h1.setAttribute("id","ageInDays" );	
+// 	var h1=document.createElement('h3');	// create h4 element tag 'h4' & store in var h1
+// 	var textAnswer=document.createTextNode('You are  '+totalDays +' days old');
+// 	h1.appendChild(textAnswer); 	//appending "textAnswer" on var 'h1'
+// 	h1.setAttribute("id","ageInDays" );	
 	
-	document.getElementById('flex-container-result').appendChild(h1);	//appending var 'h1' in 'flex-container-result'
-}
+// 	document.getElementById('flex-container-result').appendChild(h1);	//appending var 'h1' in 'flex-container-result'
+// }
 
-function reset(){
-	document.getElementById("ageInDays").remove();
-}
+// function reset(){
+// 	document.getElementById("ageInDays").remove();
+// }
 
-//challenge-2
+// //challenge-2
  
-document.getElementById('gen-cat').addEventListener('click',generateCat);
-document.querySelector('#clear-cat').addEventListener('click',clear);
+// document.getElementById('gen-cat').addEventListener('click',generateCat);
+// document.querySelector('#clear-cat').addEventListener('click',clear);
 
-function generateCat(){
-	var image=document.createElement('img');  //create image tag 'img'
-	image.src='gen_cat/cat.jpg'; //add src 
-	var gen=document.getElementById('flex-gen-cat');	//create var 'gen'
-	gen.appendChild(image);
+// function generateCat(){
+// 	var image=document.createElement('img');  //create image tag 'img'
+// 	image.src='gen_cat/cat.jpg'; //add src 
+// 	var gen=document.getElementById('flex-gen-cat');	//create var 'gen'
+// 	gen.appendChild(image);
 
-	image.setAttribute('id','gen-cat-img');
-}
+// 	image.setAttribute('id','gen-cat-img');
+// }
 
-function clear(){	
-	document.getElementById('gen-cat-img').remove();
-}
+// function clear(){	
+// 	document.getElementById('gen-cat-img').remove();
+// }
 
 
 
 //challenge-3
 
 //main function
-function rpsgame(yourchoice){
+// function rpsgame(yourchoice){
 
-	playerChoice=yourchoice.id;
-	//console.log('player:',playerChoice);
+// 	playerChoice=yourchoice.id;
+// 	//console.log('player:',playerChoice);
 
-	botChoice=numToChoice(randomNum());
-	//console.log('computer:',botChoice);
+// 	botChoice=numToChoice(randomNum());
+// 	//console.log('computer:',botChoice);
 
-	resultScore=score(playerChoice,botChoice);
-	//console.log(resultScore);
+// 	resultScore=score(playerChoice,botChoice);
+// 	//console.log(resultScore);
 
-	//console.log(finalMessage(resultScore));
-	finalMessage=finalMessage(resultScore);
+// 	//console.log(finalMessage(resultScore));
+// 	finalMessage=finalMessage(resultScore);
 
-	frontEnd(playerChoice,botChoice,finalMessage);
+// 	frontEnd(playerChoice,botChoice,finalMessage);
 	
 
-//method-2
+// //method-2
 	
-	//console.log(finalmessage(diff));
-}
+// 	//console.log(finalmessage(diff));
+// }
 
-function randomNum(){
-	return Math.floor(Math.random()*3);
-}
+// function randomNum(){
+// 	return Math.floor(Math.random()*3);
+// }
  
-function numToChoice(number){
-	return ['rock','paper','scissors'][number];
-}
-function refresh(){
-}
-function score(playerChoice,botChoice){
-	var rpsgamedatabase={									//object
-		'rock':{'rock':0.5,'paper':0,'scissors':1},
-		'paper':{'rock':1,'paper':0.5,'scissors':0},
-		'scissors':{'rock':0,'paper':1,'scissors':0.5},
-	};
-	var playerScore=rpsgamedatabase[playerChoice][botChoice];
-	var botScore=rpsgamedatabase[botChoice][playerChoice];
-	return [playerScore,botScore];
-}
+// function numToChoice(number){
+// 	return ['rock','paper','scissors'][number];
+// }
+// function refresh(){
+// }
+// function score(playerChoice,botChoice){
+// 	var rpsgamedatabase={									//object
+// 		'rock':{'rock':0.5,'paper':0,'scissors':1},
+// 		'paper':{'rock':1,'paper':0.5,'scissors':0},
+// 		'scissors':{'rock':0,'paper':1,'scissors':0.5},
+// 	};
+// 	var playerScore=rpsgamedatabase[playerChoice][botChoice];
+// 	var botScore=rpsgamedatabase[botChoice][playerChoice];
+// 	return [playerScore,botScore];
+// }
 
-function finalMessage([playerScore,botScore]){
-	if (playerScore===0)
-	{
-		return {message:'You Lost!',color:'red'};
-	}
-	else if (playerScore===0.5)
-	{
-		return {message:'You Tied!',color:'blue'};
-	}
-	else (playerScore===1)
-	{
-		return {message:'You Won!',color:'green'};
-	}
+// function finalMessage([playerScore,botScore]){
+// 	if (playerScore===0)
+// 	{
+// 		return {message:'You Lost!',color:'red'};
+// 	}
+// 	else if (playerScore===0.5)
+// 	{
+// 		return {message:'You Tied!',color:'blue'};
+// 	}
+// 	else (playerScore===1)
+// 	{
+// 		return {message:'You Won!',color:'green'};
+// 	}
 
-}
+// }
 
 
  /*
@@ -124,104 +124,104 @@ function finalmessage(num){
 }	*/
 
 
-function frontEnd(playerChoice,botChoice,finalMessage) {
+// function frontEnd(playerChoice,botChoice,finalMessage) {
 
-	var imageDatabase={	
-		'rock':document.getElementById('rock').src,
-		'paper':document.getElementById('paper').src,
-		'scissors':document.getElementById('scissors').src,
-	};
+// 	var imageDatabase={	
+// 		'rock':document.getElementById('rock').src,
+// 		'paper':document.getElementById('paper').src,
+// 		'scissors':document.getElementById('scissors').src,
+// 	};
 
-	//remove img
-	document.getElementById('rock').remove();
-	document.getElementById('paper').remove();
-	document.getElementById('scissors').remove();
-	//create element 
-	var playerDiv=document.createElement('div');
-	var messageDiv=document.createElement('h2');
-	var botDiv=document.createElement('div');
+// 	//remove img
+// 	document.getElementById('rock').remove();
+// 	document.getElementById('paper').remove();
+// 	document.getElementById('scissors').remove();
+// 	//create element 
+// 	var playerDiv=document.createElement('div');
+// 	var messageDiv=document.createElement('h2');
+// 	var botDiv=document.createElement('div');
 
-	playerDiv.innerHTML="<img src=' "+imageDatabase[playerChoice]+" ' width=150 height=150 style= ' box-shadow:0px 10px 50px rgb(5, 255, 5,.9); padding:15px; object-fit:scale-down ' >"
-	messageDiv.innerHTML="<h2 style='color:"+finalMessage['color']+"; font-size:40px;'>  "+finalMessage['message']+"  </h2>"
-	botDiv.innerHTML="<img src=' "+imageDatabase[botChoice]+" ' width=150 height=150 style=' box-shadow:0px 10px 50px rgb(255,5,5,.7); padding:15px; object-fit:scale-down '>"
+// 	playerDiv.innerHTML="<img src=' "+imageDatabase[playerChoice]+" ' width=150 height=150 style= ' box-shadow:0px 10px 50px rgb(5, 255, 5,.9); padding:15px; object-fit:scale-down ' >"
+// 	messageDiv.innerHTML="<h2 style='color:"+finalMessage['color']+"; font-size:40px;'>  "+finalMessage['message']+"  </h2>"
+// 	botDiv.innerHTML="<img src=' "+imageDatabase[botChoice]+" ' width=150 height=150 style=' box-shadow:0px 10px 50px rgb(255,5,5,.7); padding:15px; object-fit:scale-down '>"
 
-	document.getElementById('flex-container-3').appendChild(playerDiv);
-	document.getElementById('flex-container-3').appendChild(messageDiv);
-	document.getElementById('flex-container-3').appendChild(botDiv);
+// 	document.getElementById('flex-container-3').appendChild(playerDiv);
+// 	document.getElementById('flex-container-3').appendChild(messageDiv);
+// 	document.getElementById('flex-container-3').appendChild(botDiv);
 		
-}
+// }
 
 
 
-//challenge-4: change the button color
+// //challenge-4: change the button color
 
-var allbuttons=document.getElementsByTagName('button');
+// var allbuttons=document.getElementsByTagName('button');
 
-var buttonsCopy=[];
-for(let i=0; i<allbuttons.length; i++){
-	buttonsCopy.push(allbuttons[i].classList[1]);
-}
+// var buttonsCopy=[];
+// for(let i=0; i<allbuttons.length; i++){
+// 	buttonsCopy.push(allbuttons[i].classList[1]);
+// }
 
-function buttonColorChange(currentButton){
-	if (currentButton.value=='red'){
-		allbuttonRed();
-	}
-	else if (currentButton.value=='green'){
-		allbuttonGreen();
-	}
-	else if (currentButton.value=='blue'){
-		allbuttonBlue();
-	}
-	else if (currentButton.value=='random'){
-		allbuttonRandom();
-	}
-	else{
-		allbuttonReset();
-	}
-}
+// function buttonColorChange(currentButton){
+// 	if (currentButton.value=='red'){
+// 		allbuttonRed();
+// 	}
+// 	else if (currentButton.value=='green'){
+// 		allbuttonGreen();
+// 	}
+// 	else if (currentButton.value=='blue'){
+// 		allbuttonBlue();
+// 	}
+// 	else if (currentButton.value=='random'){
+// 		allbuttonRandom();
+// 	}
+// 	else{
+// 		allbuttonReset();
+// 	}
+// }
 
-function allbuttonRed(){
-	for (let i=0; i<allbuttons.length; i++){
-		allbuttons[i].classList.remove(allbuttons[i].classList[1]); //using class list
-		allbuttons[i].classList.add('reset');
-    }
-}
+// function allbuttonRed(){
+// 	for (let i=0; i<allbuttons.length; i++){
+// 		allbuttons[i].classList.remove(allbuttons[i].classList[1]); //using class list
+// 		allbuttons[i].classList.add('reset');
+//     }
+// }
 
-function allbuttonGreen(){
-	for (let i=0; i<allbuttons.length; i++){
-		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-		allbuttons[i].classList.add('insta')
-	}
-}
+// function allbuttonGreen(){
+// 	for (let i=0; i<allbuttons.length; i++){
+// 		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
+// 		allbuttons[i].classList.add('insta')
+// 	}
+// }
 
-function allbuttonBlue(){
-	for (let i=0; i<allbuttons.length; i++){
-		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-		allbuttons[i].classList.add('clickme');
-	}
-}
+// function allbuttonBlue(){
+// 	for (let i=0; i<allbuttons.length; i++){
+// 		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
+// 		allbuttons[i].classList.add('clickme');
+// 	}
+// }
 
-function allbuttonReset(){
-	for (let i=0; i<allbuttons.length; i++){
-		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-		allbuttons[i].classList.add(buttonsCopy[i]);
-	}
-}
+// function allbuttonReset(){
+// 	for (let i=0; i<allbuttons.length; i++){
+// 		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
+// 		allbuttons[i].classList.add(buttonsCopy[i]);
+// 	}
+// }
 
-function allbuttonRandom(){
+// function allbuttonRandom(){
 
-	for (let i=0; i<allbuttons.length; i++){
+// 	for (let i=0; i<allbuttons.length; i++){
 
-		let random=Math.floor(Math.random()*buttonsCopy.length);
+// 		let random=Math.floor(Math.random()*buttonsCopy.length);
 
-		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
-		allbuttons[i].classList.add(buttonsCopy[random]);
-	}
+// 		allbuttons[i].classList.remove(allbuttons[i].classList[1]);
+// 		allbuttons[i].classList.add(buttonsCopy[random]);
+// 	}
 
-}
+// }
 
 
-//challenge-5
+// blackjack
 
 let blackjackDatabase={
 	'you':{'scoreSpan':'#blackjack-results-you', 'div':'#your-box', 'score':0},
