@@ -11,4 +11,4 @@
  
  refresh page to new game
 
- here you go! -> https://i-steve.github.io/blackjack.github.io/
+ <h1>here you go! -> https://i-steve.github.io/blackjack.github.io/</h1>
